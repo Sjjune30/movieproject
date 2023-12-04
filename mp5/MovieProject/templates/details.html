@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <img src="{{key.image.url}}"class="img-fluid">
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <b > <p style="text-align:center;">{{key.name}}-{{key.year}}</p></b><br>
+        {{key.details}}<br>
+        <a class="btn btn-warning" href="{% url 'HomeApp:update' key.id %}">Edit</a>
+        <a class="btn btn-danger" href="{% url 'HomeApp:delete' key.id %}">Delete</a>
+        <a class="btn btn-success" href="{% url 'HomeApp:home' %}">Home</a>
+    </div>
+</div>
+
+
+{% endblock %}
